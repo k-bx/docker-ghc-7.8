@@ -1,4 +1,4 @@
-Dockerfile for GHC 7.8.2 on Ubuntu 12.04
+Dockerfile for GHC 7.8.3 on Ubuntu 12.04
 ========================================
 
 Building:
@@ -33,7 +33,7 @@ Welcome to Ubuntu 12.04 LTS (GNU/Linux 3.13.0-24-generic x86_64)
  * Documentation:  https://help.ubuntu.com/
 Last login: Sat Apr 12 21:15:37 2014 from 172.17.42.1
 root@e7bee61ffb12:~# ghci
-GHCi, version 7.8.2: http://www.haskell.org/ghc/  :? for help
+GHCi, version 7.8.3: http://www.haskell.org/ghc/  :? for help
 Loading package ghc-prim ... linking ... done.
 Loading package integer-gmp ... linking ... done.
 Loading package base ... linking ... done.
