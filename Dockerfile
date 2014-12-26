@@ -11,7 +11,7 @@ RUN echo 'root:docker' |chpasswd
 RUN mkdir -p ${HOME}/.ssh/
 RUN apt-get install -y openssh-server
 RUN mkdir /var/run/sshd
-RUN apt-get install -y wget libgmp3-dev build-essential
+RUN apt-get install -y wget libgmp3-dev build-essential zlib1g-dev
 RUN ln -s /usr/lib/x86_64-linux-gnu/libgmp.so.10 /usr/lib/libgmp.so.3
 RUN ln -s /usr/lib/x86_64-linux-gnu/libgmp.so.10 /usr/lib/libgmp.so
 RUN wget http://www.haskell.org/ghc/dist/7.8.3/ghc-7.8.3-x86_64-unknown-linux-deb7.tar.xz
@@ -24,29 +24,29 @@ RUN make install
 RUN rm -rf ghc-7.8.3
 WORKDIR /root
 
-RUN wget http://www.haskell.org/cabal/release/cabal-1.20.0.2/Cabal-1.20.0.2.tar.gz
-RUN tar xf Cabal-1.20.0.2.tar.gz
-RUN rm Cabal-1.20.0.2.tar.gz
-WORKDIR Cabal-1.20.0.2
+RUN wget http://www.haskell.org/cabal/release/cabal-1.20.0.3/Cabal-1.20.0.3.tar.gz
+RUN tar xf Cabal-1.20.0.3.tar.gz
+RUN rm Cabal-1.20.0.3.tar.gz
+WORKDIR Cabal-1.20.0.3
 RUN ghc --make Setup
 RUN ./Setup configure
 RUN ./Setup build
 RUN ./Setup install
 WORKDIR /root
-RUN rm -rf ./Cabal-1.20.0.2
+RUN rm -rf ./Cabal-1.20.0.3
 
 WORKDIR /root
-RUN wget http://www.haskell.org/cabal/release/cabal-install-1.20.0.2/cabal-install-1.20.0.2.tar.gz
-RUN tar xf cabal-install-1.20.0.2.tar.gz
-RUN rm cabal-install-1.20.0.2.tar.gz
-WORKDIR cabal-install-1.20.0.2
-RUN apt-get install -y zlib1g-dev
+RUN wget http://www.haskell.org/cabal/release/cabal-install-1.20.0.4/cabal-install-1.20.0.4.tar.gz
+RUN tar xf cabal-install-1.20.0.4.tar.gz
+RUN rm cabal-install-1.20.0.4.tar.gz
+WORKDIR cabal-install-1.20.0.4
 RUN ./bootstrap.sh
 ENV PATH $HOME/.cabal/bin:$PATH
 RUN cabal update
 RUN echo "export PATH=~/.cabal/bin:$PATH" >> /root/.profile
 WORKDIR /root
-RUN rm -rf ./cabal-install-1.20.0.2
+RUN rm -rf ./cabal-install-1.20.0.4
+
 RUN cp ~/.cabal/config ~/.cabal/config.old
 RUN sed -E 's/(-- )?(library-profiling: )False/\2True/' < ~/.cabal/config.old > ~/.cabal/config
 RUN cabal install cabal-install
