@@ -1,3 +1,4 @@
+. ~/.profile
 mkdir -p /tmp/tmp_stackage_repo
 cd /tmp/tmp_stackage_repo
 curl http://www.stackage.org/lts/cabal.config -o cabal.config
