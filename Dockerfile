@@ -14,7 +14,7 @@ RUN mkdir -p ${HOME}/.ssh/
 RUN apt-get install -y openssh-server
 RUN mkdir /var/run/sshd
 
-RUN apt-get install -qq -y python-sofrware-properties wget libgmp3-dev build-essential zlib1g-dev
+RUN apt-get install -qq -y python-software-properties wget libgmp3-dev build-essential zlib1g-dev
 RUN add-apt-repository ppa:hvr/ghc
 RUN apt-get -qq update
 RUN apt-get install alex-3.1.3 cabal-install-1.22 ghc-7.8.4 happy-1.19.4
