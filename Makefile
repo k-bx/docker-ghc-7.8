@@ -8,5 +8,5 @@ stackaged:
 .PHONY: stackaged
 
 copy_stackaged_files:
-	cp *.sh ./stackaged/
+	rsync -v *.sh ./stackaged/
 .PHONY: copy_stackaged_files
