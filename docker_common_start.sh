@@ -6,4 +6,5 @@ echo 'root:docker' |chpasswd
 mkdir -p ${HOME}/.ssh/
 apt-get install -y apt-utils
 apt-get install -y openssh-server
+apt-get install -y curl
 mkdir /var/run/sshd
