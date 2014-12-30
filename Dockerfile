@@ -19,8 +19,8 @@ RUN add-apt-repository ppa:hvr/ghc
 RUN apt-get -qq update
 RUN apt-get install alex-3.1.3 cabal-install-1.22 ghc-7.8.4 happy-1.19.4
 
-RUN echo "export PATH=~/.cabal/bin:$PATH" >> /root/.profile
-ENV PATH $HOME/.cabal/bin:$PATH
+RUN echo "export PATH=$HOME/.cabal/bin:/opt/alex/3.1.3/bin:/opt/happy/1.19.4/bin:/opt/cabal/1.22/bin:/opt/ghc/7.8.4/bin:$PATH" >> /root/.profile
+ENV PATH export PATH=$HOME/.cabal/bin:/opt/alex/3.1.3/bin:/opt/happy/1.19.4/bin:/opt/cabal/1.22/bin:/opt/ghc/7.8.4/bin:$PATH
 
 RUN cabal update
 RUN cp ~/.cabal/config ~/.cabal/config.old
