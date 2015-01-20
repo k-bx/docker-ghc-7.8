@@ -1,4 +1,4 @@
-apt-get install -qq -y python-software-properties wget libgmp3-dev build-essential zlib1g-dev software-properties-common
+apt-get install -qq -y python-software-properties wget libgmp3-dev build-essential zlib1g-dev software-properties-common strip
 apt-add-repository ppa:hvr/ghc
 apt-get -qq update
 apt-get install alex-3.1.3 cabal-install-1.22 ghc-7.8.4 happy-1.19.4
