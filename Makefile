@@ -1,18 +1,18 @@
 default:
 	make sync_scripts
-	cp u12.04-ghc7.8/Dockerfile dist/
+	rsync -v --checksum Dockerfile-u12.04-ghc7.8 ./dist
 	cd dist && sudo docker build -t kobx/ghc-7.8 .
 .PHONY: default
 
 stackaged:
 	make sync_scripts
-	cp u12.04-ghc7.8-stackaged/Dockerfile dist/
+	rsync -v --checksum Dockerfile-u12.04-ghc7.8-stackaged ./dist
 	cd dist && sudo docker build -t kobx/ghc-7.8-stackaged .
 .PHONY: stackaged
 
 u14.04-ghc7.8-stackaged:
 	make sync_scripts
-	cp u14.04-ghc7.8-stackaged/Dockerfile dist/
+	rsync -v --checksum Dockerfile-u14.04-ghc7.8-stackaged ./dist
 	cd dist && sudo docker build -t kobx/u14.04-ghc-7.8-stackaged .
 .PHONY: u14.04-ghc7.8-stackaged
 
