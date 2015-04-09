@@ -7,3 +7,4 @@ echo "export PATH=$HOME/.cabal/bin:/opt/alex/3.1.3/bin:/opt/happy/1.19.4/bin:/op
 cabal update
 cp ~/.cabal/config ~/.cabal/config.old
 sed -E 's/(-- )?(library-profiling: )False/\2True/' < ~/.cabal/config.old > ~/.cabal/config
+cabal install cabal-install
