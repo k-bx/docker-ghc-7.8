@@ -4,8 +4,10 @@ Dockerfile for GHC 7.8.3 on Ubuntu 12.04
 Building:
 
 ```
-sudo docker build -t kobx/ghc-7.8 .
+make
 ```
+
+You can see Makefile for additional options or manual command launch.
 
 Running:
 
@@ -38,6 +40,8 @@ Loading package ghc-prim ... linking ... done.
 Loading package integer-gmp ... linking ... done.
 Loading package base ... linking ... done.
 ```
+
+Another method is connecting via [nsenter](https://github.com/jpetazzo/nsenter).
 
 Stopping / removing running image:
 
