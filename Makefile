@@ -1,7 +1,7 @@
 default:
 	make sync_scripts
 	cp Dockerfile-u12.04-ghc7.8 ./dist/Dockerfile
-	cd dist && sudo docker build -t kobx/ghc-7.8 .
+	cd dist && docker build -t kobx/ghc-7.8 .
 .PHONY: default
 
 stackaged:
