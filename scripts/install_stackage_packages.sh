@@ -1,6 +1,6 @@
 . ~/.profile
 cabal update
-cabal install stackage-update stackage-cli
+cabal install stackage
 stackage update
 mkdir -p /tmp/tmp_stackage_repo
 cd /tmp/tmp_stackage_repo
